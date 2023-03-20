@@ -1,4 +1,4 @@
-job('DSL-job') {
+jobDsl('DSL-job') {
   steps {
     shell('echo Hello World!')
   }
