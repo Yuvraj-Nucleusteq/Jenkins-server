@@ -7,7 +7,6 @@ job('DSL-job'){
         githubPush()
     }
     steps{
-        shell("python Sum.py")
         shell("flake8 . --exit-zero")
     }
 }
