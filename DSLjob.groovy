@@ -7,7 +7,7 @@ sh'flake8 . --exit-zero --format=pylint'
   }
   post{
     always{
-        publishIssues issues: [flake8]
+        scanForIssues tool: flake8(pattern: 'Sum.py')
     }
 }
 }
