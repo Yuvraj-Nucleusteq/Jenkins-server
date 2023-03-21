@@ -7,7 +7,7 @@ sh'flake8 . --exit-zero --format=pylint --output-file=/var/lib/jenkins/workspace
   }
   post{
     always{
-        scanForIssues tool: flake8(pattern: 'flake8.log')
+        recordIssues tool: flake8(pattern: 'flake8.log')
     }
 }
 }
