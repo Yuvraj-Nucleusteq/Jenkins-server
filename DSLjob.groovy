@@ -8,6 +8,7 @@ stages {
   post{
     always{
         recordIssues tool: flake8(pattern: 'flake8.log')
+        recordIssues qualityGates: [[threshold: 10, type: 'TOTAL', unstable: false]], tools: [acuCobol()]
     }
 }
 }
