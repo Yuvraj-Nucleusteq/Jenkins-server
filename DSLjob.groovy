@@ -8,6 +8,7 @@ stages {
   post{
     always{
         recordIssues failOnError: true, qualityGates: [[threshold: 10, type: 'TOTAL', unstable: false]], tool: flake8(pattern: 'flake8.log')
+        discoverReferenceBuild referenceJob: 'DSL-test'
     }
 }
 }
