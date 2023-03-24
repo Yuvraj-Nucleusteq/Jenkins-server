@@ -13,7 +13,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: flake8 Lint
+      - name: flake8-Lint
         run: | 
               pip install flake8
-              echo $(flake8 . --count --exit-zero)
+              flake8 . --count --exit-zero
+      - name: flake check
+        run: echo $(steps.flake8-Lint.outputs)
