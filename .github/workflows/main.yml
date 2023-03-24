@@ -13,12 +13,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: flake8 install
-        run: pip install flake8
-      - shell: pwsh
+      - name: flake8-Lint
         id: result
-        run: |
-              $count = flake8 . --count --exit-zero
+        run: | 
+              pip install flake8
+              flake8 . --count --exit-zero
       - name: flake check
-        # if: steps.result.count > 10
-        run: echo {steps.result.count}
+        run: echo $(steps.result.outputs)
