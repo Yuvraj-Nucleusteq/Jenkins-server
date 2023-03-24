@@ -13,7 +13,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: flake8 Lint
+      - name: flake8-Lint
         run: | 
               pip install flake8
-              flake8 . --count --max-complexity=10
+              $count = flake8 . --count --exit-zero
+      -name: flake8 check
+      if: steps.flake8-Lint.outputs.count > 10
+      run: exit 1
