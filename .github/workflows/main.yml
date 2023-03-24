@@ -1,4 +1,3 @@
-
 name: flake8 Lint
 on: [push, pull_request]
 
@@ -13,10 +12,5 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: flake8-Lint
-        id: result
-        run: | 
-              pip install flake8
-              flake8 . --count --exit-zero
-      - name: flake check
-        run: echo $(steps.result.outputs)
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
