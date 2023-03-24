@@ -17,6 +17,6 @@ jobs:
         run: | 
               pip install flake8
               $count = flake8 . --count --exit-zero
-      -name: flake8 check
-      if: steps.flake8-Lint.outputs.count > 10
-      run: exit 1
+      - name: flake8 check
+        if: steps.flake8-Lint.outputs.count > 10
+        run: exit 1
