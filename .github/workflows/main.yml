@@ -16,6 +16,4 @@ jobs:
       - name: flake8 Lint
         run: | 
               pip install flake8
-        count: echo $(flake8 . --count --exit-zero)
-      - name: flake8 check
-        run: echo ${count}
+              echo $(flake8 . --count --exit-zero)
