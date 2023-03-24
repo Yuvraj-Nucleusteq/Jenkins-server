@@ -16,4 +16,6 @@ jobs:
       - name: flake8 Lint
         run: | 
               pip install flake8
-              flake8 . --count --max-complexity=10 --exit-zero
+        count: echo $(flake8 . --count --exit-zero)
+      - name: flake8 check
+        run: echo ${count}
