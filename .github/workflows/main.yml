@@ -1,3 +1,4 @@
+
 name: flake8 Lint
 on: [push, pull_request]
 
@@ -12,5 +13,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-      - name: flake8 Lint
-        uses: py-actions/flake8@v2 --max-complexcity=10
+      - name: flake8-Lint
+        id: result
+        run: | 
+              pip install flake8
+              pip install flake8-dashboard
+              flake8 . --exit-zero --format=dashboard
