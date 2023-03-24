@@ -19,4 +19,4 @@ jobs:
               pip install flake8
               flake8 . --count --exit-zero
       - name: flake check
-        run: echo $(steps.result.outputs)
+        run: echo ${steps.result.outputs}
